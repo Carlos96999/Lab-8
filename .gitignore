@@ -1,0 +1,10 @@
+/target/
+*.swf
+*.air
+*.ipa
+*.apk
+.settings/
+bin-debug/
+bin-release/
+[Oo]bj/
+[Bb]in/
