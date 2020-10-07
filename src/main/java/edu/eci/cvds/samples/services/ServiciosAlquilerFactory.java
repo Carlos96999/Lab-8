@@ -29,6 +29,9 @@ public class ServiciosAlquilerFactory {
                setEnvironmentId(env);
                setClassPathResource(pathResource);
                bind(ItemDAO.class).to(MyBATISItemDAO.class);
+               bind(ClienteDAO.class).to(MyBATISClienteDAO.class);
+               bind(TipoItemDAO.class).to(MyBATISTipoItemDAO.class);
+               bind(ItemDAO.class).to(MyBATISItemDAO.class);
                bind(ServiciosAlquiler.class).to(ServiciosAlquilerImpl.class);
            }
        });
