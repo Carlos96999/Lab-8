@@ -23,58 +23,62 @@
 
 <h:body>
     <h:form id="Client_Form">
+        <center>
+            <h1><font color="RED">Registro Clientes</font></h1>
 
+        </center>
+        <h:panelGrid id="grid" cellpadding="5" columns="4" class="panelCenter" style="margin-bottom:10px">
+            <p:outputLabel for="Documento" value="Documento: " style="color:red;" />
+            <p:inputText id="Documento" type="long" binding="#{doc}" />
+
+            <p:outputLabel for="Nombre" value="Nombre: " style="color:red;" />
+            <p:inputText id="Nombre" type="String" binding="#{name}"/>
+
+            <p:outputLabel for="Direccion" value="Direccion: " style="color:red;" />
+            <p:inputText id="Direccion" type="String" binding="#{dir}"/>
+
+            <p:outputLabel for="Telefono" value="Telefono: " style="color:red;"  />
+            <p:inputText id="Telefono" type="String" binding="#{tele}"/>
+
+            <p:outputLabel for="Email" value="Email: " style="color:red;"  />
+            <p:inputText id="Email" type="String" binding="#{mail}"/>
+
+
+
+        </h:panelGrid>
         <p:dataTable var="cliente" value="#{AlquilerItemsBean.consultarClientes()}"
                      paginator="true" paginatorTemplate="{FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
-                     rows="10" selectionMode="single" id="documento" selection="#{AlquilerItemsBean.selectedCliente}"
+                     rows="6" selectionMode="single" id="documento" selection="#{AlquilerItemsBean.selectedCliente}"
                      rowKey="#{cliente.getDocumento()}">
-            <f:facet name="header">
+            <f:facet name="header" style="color:blue;" >
                 Clientes
             </f:facet>
-            <p:column headerText="Documento">
+            <p:column headerText="Documento" style="color:blue;">
                 <h:outputText value="#{cliente.getDocumento()}" />
             </p:column>
-            <p:column headerText="Nombre" >
+            <p:column headerText="Nombre" style="color:blue;">
                 <h:outputText value="#{cliente.getNombre()}" />
             </p:column>
-            <p:column headerText="Telefono">
+            <p:column headerText="Telefono" style="color:blue;">
                 <h:outputText value="#{cliente.getTelefono()}" />
             </p:column>
-            <p:column headerText="Direccion">
+            <p:column headerText="Direccion" style="color:blue;">
                 <h:outputText value="#{cliente.getDireccion()}" />
             </p:column>
-            <p:column headerText="Email">
+            <p:column headerText="Email" style="color:blue;">
                 <h:outputText value="#{cliente.getEmail()}" />
             </p:column>
-            <p:column headerText="Vetado">
+            <p:column headerText="Vetado" style="color:blue;">
                 <h:outputText value="#{cliente.isVetado()}" />
             </p:column>
 			
-			<f:facet name="footer">
+			<f:facet name="footer" style="color:blue;">
 				<h:commandButton id="clisele"  value="Ver" action="registroalquiler?faces-redirect = true"/>
 			</f:facet>
         </p:dataTable>
 		
 
-        <h:panelGrid id="grid" cellpadding="5" columns="2" class="panelCenter" style="margin-bottom:10px">
-            <p:outputLabel for="Documento" value="Documento: " />
-            <p:inputText id="Documento" type="long" binding="#{doc}" />
 
-            <p:outputLabel for="Nombre" value="Nombre: "/>
-            <p:inputText id="Nombre" type="String" binding="#{name}"/>
-
-            <p:outputLabel for="Direccion" value="Direccion: "/>
-            <p:inputText id="Direccion" type="String" binding="#{dir}"/>
-
-            <p:outputLabel for="Telefono" value="Telefono: " />
-            <p:inputText id="Telefono" type="String" binding="#{tele}"/>
-
-            <p:outputLabel for="Email" value="Email: " />
-            <p:inputText id="Email" type="String" binding="#{mail}"/>
-
-			
-
-        </h:panelGrid>
         
 		<div class="divButton">
 			<p:commandButton update="Client_Form" class="Button" actionListener="#{AlquilerItemsBean.registrarCliente(doc.value,name.value,tele.value,dir.value,mail.value)}" value="Registrar Cliente"/>
