@@ -1,12 +1,5 @@
 package edu.eci.cvds.guice;
 
-import javax.servlet.ServletContext;
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
-
-import edu.eci.cvds.sampleprj.dao.ClienteDAO;
-import edu.eci.cvds.sampleprj.dao.ItemDAO;
-import edu.eci.cvds.sampleprj.dao.TipoItemDAO;
 import edu.eci.cvds.sampleprj.dao.mybatis.MyBATISClienteDAO;
 import edu.eci.cvds.sampleprj.dao.mybatis.MyBATISItemDAO;
 import edu.eci.cvds.sampleprj.dao.mybatis.MyBATISTipoItemDAO;
