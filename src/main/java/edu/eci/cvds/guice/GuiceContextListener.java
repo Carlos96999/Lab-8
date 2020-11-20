@@ -33,6 +33,6 @@ public class GuiceContextListener implements ServletContextListener {
             }
         });
 
-        servletContextEvent.getServletContext().setAttribute(Injector.class.getName(), injector);
+        //servletContextEvent.getServletContext().setAttribute(Injector.class.getName(), injector);
     }
 }
